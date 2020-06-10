@@ -108,7 +108,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
@@ -164,8 +164,8 @@ var SADActionFeed = /*#__PURE__*/function (_HTMLElement) {
     value: function connectedCallback() {
       var _this2 = this;
 
-      var mountPoint = document.createElement('ul');
-      mountPoint.className = 'list-feed'; //this.attachShadow({ mode: 'open' }).appendChild(mountPoint);
+      var mountPoint = document.createElement('div');
+      mountPoint.className = 'list-feed list-feed-solid'; //this.attachShadow({ mode: 'open' }).appendChild(mountPoint);
 
       this.appendChild(mountPoint);
       this.loadData(function (data) {
@@ -199,7 +199,8 @@ var SADActionFeed = /*#__PURE__*/function (_HTMLElement) {
   }, {
     key: "makeItem",
     value: function makeItem(parentElement, attributes) {
-      var item = document.createElement('li');
+      var item = document.createElement('div');
+      item.className = 'list-feed-item';
       var itemText = document.createElement('div');
       itemText.innerHTML = attributes.text;
       item.appendChild(itemText);

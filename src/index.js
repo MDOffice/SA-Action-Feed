@@ -24,8 +24,8 @@ class SADActionFeed extends HTMLElement {
     }
 
     connectedCallback() {
-        const mountPoint = document.createElement('ul');
-        mountPoint.className = 'list-feed';
+        const mountPoint = document.createElement('div');
+        mountPoint.className = 'list-feed list-feed-solid';
         //this.attachShadow({ mode: 'open' }).appendChild(mountPoint);
         this.appendChild(mountPoint);
 
@@ -57,7 +57,8 @@ class SADActionFeed extends HTMLElement {
     }
 
     makeItem(parentElement, attributes) {
-        const item = document.createElement('li');
+        const item = document.createElement('div');
+        item.className = 'list-feed-item';
 
         const itemText = document.createElement('div');
         itemText.innerHTML = attributes.text;
