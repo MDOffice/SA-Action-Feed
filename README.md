@@ -9,7 +9,7 @@
 Usage
 -----
 ```html
-<sa-action-feed class="d-block" data-url="//localhost/feed"></sa-action-feed
+<sa-action-feed class="d-block" data-url="//localhost/feed"></sa-action-feed>
 ```
 
 Copyright and license
