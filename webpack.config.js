@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 //const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 //const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 //const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -36,24 +35,10 @@ const common = {
             {
                 test: /\.(ts|js)x?$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader?cacheDirectory=true'
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader'
-                ]
+                use: 'babel-loader?cacheDirectory=true'
             }
         ]
     },
-
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: 'css/[name].css'
-        }),
-        //  new BundleAnalyzerPlugin()
-    ],
     devServer: {
         contentBase: [
             path.join(__dirname, 'examples'),
