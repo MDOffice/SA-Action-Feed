@@ -5,7 +5,7 @@
 
 Deprecate
 -----
-use import `import '@mdoffice/md-component/ActionFeed'`
+use `import '@mdoffice/md-component/ActionFeed'`
 
 Usage
 -----
